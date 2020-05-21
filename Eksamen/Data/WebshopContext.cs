@@ -33,10 +33,10 @@ namespace Eksamen.Data
             new Product()
             {
                 Id = -2,
-                Name = "Scorpion X",
-                Price = 500,
+                Name = "AGV X3000",
+                Price = 4679,
                 Category = "Helmet",
-                Description = "ECE-godkendt",
+                Description = "AGV X3000 lader dig drømme tilbage til gamle dage, da Giacomo Agostini tordnede mod sine 15 verdensmesterskabstitler!",
                 ProductImageId = 2
             });
             #endregion
@@ -58,8 +58,30 @@ namespace Eksamen.Data
                  {
                      Id = 3,
                      Path = "/images/products/hjelm3.jpg"
-                 
-            });
+
+
+                 },
+                  new Image()
+                  {
+                      Id = 4,
+                      Path = "/images/products/AGV X3000 1.jpg"
+
+                  },
+
+                   new Image()
+                   {
+                       Id = 5,
+                       Path = "/images/products/AGV X3000 2.jpg"
+
+                   },
+
+                    new Image()
+                    {
+                        Id = 6,
+                        Path = "/images/products/AGV X3000 2.jpg"
+
+                    }
+                 );
             #endregion
 
             #region ProductImageSeed 
@@ -83,7 +105,28 @@ namespace Eksamen.Data
                 ProductId = 1,
                 ImageId = 3
 
-            }
+            },
+                new ProductImage()
+                {
+                    Id = 4,
+                    ProductId = 2,
+                    ImageId = 4
+
+                },
+                new ProductImage()
+                {
+                    Id = 5,
+                    ProductId = 2,
+                    ImageId = 5
+
+                },
+                new ProductImage()
+                {
+                    Id = 6,
+                    ProductId = 2,
+                    ImageId = 6
+
+                }
             );
             #endregion
 

@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <Folder Include="Views\NewFolder\" />
+    <Folder Include="wwwroot\images\background\" />
+    <Folder Include="wwwroot\images\icons\" />
   </ItemGroup>
 
 </Project>

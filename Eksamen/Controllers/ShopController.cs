@@ -22,7 +22,7 @@ namespace Eksamen.Controllers
         // GET: /<controller>/
         public IActionResult Shop()
         {
-            String connectionString = "<yourconnectionstringhere>";
+            String connectionString = "Server=DESKTOP-IOQO0BN\\MADS;Database=Webshop;Trusted_Connection=True;MultipleActiveResultSets=True";
             String sql = "SELECT * FROM products";
             var model = new List<Product>();
 
@@ -36,7 +36,13 @@ namespace Eksamen.Controllers
                 {
                     var product = new Product();
                     product.Name = rdr.GetString(rdr.GetOrdinal("Name"));
+                    product.Price = rdr.GetDecimal(rdr.GetOrdinal("Price"));
+                    product.Description = rdr.GetString(rdr.GetOrdinal("Description"));
+                    product.Category = rdr.GetString(rdr.GetOrdinal("Category"));
                     product.Name = rdr.GetString(rdr.GetOrdinal("Name"));
+                    product.Price = rdr.GetDecimal(rdr.GetOrdinal("Price"));
+                    product.Description = rdr.GetString(rdr.GetOrdinal("Description"));
+                    product.Category = rdr.GetString(rdr.GetOrdinal("Category"));
                     model.Add(product);
                 }
 

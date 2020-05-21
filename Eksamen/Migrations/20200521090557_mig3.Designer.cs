@@ -3,14 +3,16 @@ using Eksamen.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Eksamen.Migrations
 {
     [DbContext(typeof(WebshopContext))]
-    partial class WebshopContextModelSnapshot : ModelSnapshot
+    [Migration("20200521090557_mig3")]
+    partial class mig3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,22 +48,22 @@ namespace Eksamen.Migrations
                         new
                         {
                             Id = 3,
-                            Path = "/images/products/hjelm3.jpg"
-                        },
-                        new
-                        {
-                            Id = 4,
                             Path = "/images/products/AGV X3000 1.jpg"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = 4,
                             Path = "/images/products/AGV X3000 2.jpg"
                         },
                         new
                         {
+                            Id = 5,
+                            Path = "/images/products/AGV X3000 3.jpg"
+                        },
+                        new
+                        {
                             Id = 6,
-                            Path = "/images/products/AGV X3000 2.jpg"
+                            Path = "/images/products/hjelm1.jpg"
                         });
                 });
 

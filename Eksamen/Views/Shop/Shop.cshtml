@@ -3,15 +3,35 @@
 @{
     ViewData["Title"] = "Products";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>List of products</p>
 
-@foreach (var product in Model)
-{
-    <div>
-        @product.Name - @product.Price
-        <hr />
+
+    <div class="container">
+        <h1>@ViewData["Title"]</h1>
+
+        <p>Overblik over produkter</p>
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4">
+                    <div class="bg-primary p-5">
+                        billede her
+                    </div>
+                    <div>
+                        <span>
+                            @product.Name
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Pris: @product.Price
+                        </span>
+                    </div>
+
+                </div>
+            }
+        </div>
+
     </div>
-}
+
 
