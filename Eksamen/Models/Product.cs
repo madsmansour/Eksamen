@@ -25,6 +25,8 @@ namespace Eksamen.Models
 
         public int ProductImageId { get; set; }
 
+        public string Image { get; set; }
+
     }
 
 }

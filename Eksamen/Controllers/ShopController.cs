@@ -23,7 +23,7 @@ namespace Eksamen.Controllers
         public IActionResult Shop()
         {
             String connectionString = "Server=DESKTOP-IOQO0BN\\MADS;Database=Webshop;Trusted_Connection=True;MultipleActiveResultSets=True";
-            String sql = "SELECT * FROM products";
+            String sql = " SELECT Products.Name, min(Images.Path) as image FROM Products, ProductImages, Images where ProductImages.ImageId = Images.Id and ProductImages.ProductId = Products.Id group by Products.Name;"; //her bruger jeg join query til at indlæse det første billede og data
             var model = new List<Product>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -39,10 +39,7 @@ namespace Eksamen.Controllers
                     product.Price = rdr.GetDecimal(rdr.GetOrdinal("Price"));
                     product.Description = rdr.GetString(rdr.GetOrdinal("Description"));
                     product.Category = rdr.GetString(rdr.GetOrdinal("Category"));
-                    product.Name = rdr.GetString(rdr.GetOrdinal("Name"));
-                    product.Price = rdr.GetDecimal(rdr.GetOrdinal("Price"));
-                    product.Description = rdr.GetString(rdr.GetOrdinal("Description"));
-                    product.Category = rdr.GetString(rdr.GetOrdinal("Category"));
+                    product.Image = rdr.GetString(rdr.GetOrdinal("Image"));
                     model.Add(product);
                 }
 
