@@ -156,21 +156,21 @@ namespace Eksamen.Data
                 new Image()
                 {
                 Id = 10,
-                Path = "/images/products/boots/MC-Støvler Course Aero, Sort 1"
+                Path = "/images/products/boots/MC-Støvler Course Aero, Sort 1.jpg"
 
                 },
 
                 new Image()
                 {
                 Id = 11,
-                Path = "/images/products/boots/MC-Støvler Course Aero, Sort 2"
+                Path = "/images/products/boots/MC-Støvler Course Aero, Sort 2.jpg"
 
                 },
 
                 new Image()
                 {
                 Id = 12,
-                Path = "/images/products/boots/MC-Støvler Course Aero, Sort 3"
+                Path = "/images/products/boots/MC-Støvler Course Aero, Sort 3.jpg"
 
                 },
                 new Image()
@@ -194,21 +194,21 @@ namespace Eksamen.Data
                 new Image()
                 {
                 Id = 16,
-                Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 1"
+                Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 1.jpg"
 
                 },
 
                 new Image()
                 {
                 Id = 17,
-                Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 2"
+                Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 2.jpg"
 
                 },
 
                 new Image()
                 {
                 Id = 18,
-                Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 3"
+                Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 3.jpg"
 
                 },
                 new Image()
