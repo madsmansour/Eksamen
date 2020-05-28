@@ -47,25 +47,11 @@ namespace Eksamen.Controllers
 
             return View(model);
         }
-        public IActionResult Product(int? id)
+        public IActionResult Product()
         {
-
-            String connectionString = "Server=DESKTOP-IOQO0BN\\MADS;Database=Webshop;Trusted_Connection=True;MultipleActiveResultSets=True";
-            String sql = "SELECT * from Products where id = " + id;
-            var model = new Product();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Connection = conn;
-                SqlDataReader rdr = cmd.ExecuteReader();
-                var product = new Product();
-                product.Name = rdr.GetString(rdr.GetOrdinal("Name"));
-                return View(product);
+                return View();
             }
 
         }
     }
-}
 

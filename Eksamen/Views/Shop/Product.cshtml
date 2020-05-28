@@ -1,6 +1,121 @@
 ﻿@model Product
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = "Min kurv";
 }
 
-<h1>Hej</h1>
+<style>
+    #products img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    span {
+        font-weight: bold;
+    }
+</style>
+
+
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>Min kurv</p>
+    <div class="row" id="products">
+
+        <div class="col-md-4 mb-4">
+            <div>
+                <img src="~/images/products/boots/MC-Sko XPD X-Zero R, Hvid 1.jpg" alt="Productpicture" />
+            </div>
+            <div>
+                <span>
+                    MC-Sko XPD X-Zero R
+                </span>
+            </div>
+            <div>
+                <span>
+                    Pris: 699,00 kr.
+                </span>
+            </div>
+            <div>
+                <span>
+                    Kategori: Boots
+                </span>
+            </div>
+            <div>
+                <span>
+                    <form>
+                        <label for="amount">Antal:</label>
+                        <input type="number" id="amount" name="amount"><br>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="products">
+
+        <div class="col-md-4 mb-4">
+            <div>
+                <img src="~/images/products/helmets/AGV X3000 1.jpg" alt="Productpicture" />
+            </div>
+            <div>
+                <span>
+                    AGV X3000 1
+                </span>
+            </div>
+            <div>
+                <span>
+                    Pris: 4679,00 kr.
+                </span>
+            </div>
+            <div>
+                <span>
+                    Kategori: Helmets
+                </span>
+            </div>
+            <div>
+                <span>
+                    <form>
+                        <label for="amount">Antal:</label>
+                        <input type="number" id="amount" name="amount"><br>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="products">
+
+        <div class="col-md-4 mb-4">
+            <div>
+                <img src="~/images/products/suits/Læderdragt 2-delt IXS Camaro 1.jpg" alt="Productpicture" />
+            </div>
+            <div>
+                <span>
+                    Læderdragt 2-delt IXS Camaro 1
+                </span>
+            </div>
+            <div>
+                <span>
+                    Pris: 3149,00 kr.
+                </span>
+            </div>
+            <div>
+                <span>
+                    Kategori: Suits
+                </span>
+            </div>
+            <div>
+                <span>
+                    <form>
+                        <label for="amount">Antal:</label>
+                        <input type="number" id="amount" name="amount"><br>
+                    </form>
+                </span>
+            </div>
+            <br />
+            <div class="text-center">
+                <button id="continueToPayment" class="btn btn-sm btn-primary" style="width:350px;">Klik her for at fortsætte til levering og betaling.</button>
+            </div>
+        </div>
+    </div>
+</div>
