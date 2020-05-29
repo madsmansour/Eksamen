@@ -4,7 +4,7 @@
 
 For at starte:
 
-1. __Åbne projekt i Microsoft Visual Studio__
+1. __Åben projekt i Microsoft Visual Studio__
 
 1. __Ændre connection string i ShopController.cs samt appsettings.json så den passer til din database__
 
