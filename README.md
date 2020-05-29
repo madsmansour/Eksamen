@@ -10,7 +10,7 @@ For at starte:
 
 1. __Kør kommandoen 'EntityFrameworkCore\Add-Migration' i PM for at lægge data i databasen.__
 
-1. __Kør kommandoen 'EntityFrameworkCore\Update-Database'__
+1. __Kør kommandoen 'EntityFrameworkCore\Update-Database' i PM__
 
 1. __Kør projektet.__
 
