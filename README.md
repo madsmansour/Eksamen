@@ -8,7 +8,7 @@ For at starte:
 
 1. __Ændre connection string i ShopController.cs samt appsettings.json så den passer til din database__
 
-1. __Kør kommandoen 'EntityFrameworkCore\Add-Migration' i PM for at lægge dummy data i databasen.
+1. __Kør kommandoen 'EntityFrameworkCore\Add-Migration' i PM for at lægge dummy data i databasen.__
 
 1. __Kør kommandoen 'EntityFrameworkCore\Update-Database'__
 
