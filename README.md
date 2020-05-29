@@ -12,5 +12,5 @@ For at starte:
 
 1. __Kør kommandoen 'EntityFrameworkCore\Update-Database'__
 
-1 __Kør projektet.__
+1. __Kør projektet.__
 
