@@ -47,7 +47,7 @@ namespace Eksamen.Controllers
 
             return View(model);
         }
-        public IActionResult Product()
+        public IActionResult ShoppingCart()
         {
                 return View();
             }
