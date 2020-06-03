@@ -17,7 +17,7 @@ namespace Eksamen.Controllers
     {
         private WebshopContext db = new WebshopContext(new DbContextOptions<WebshopContext>());
 
-       
+
         // GET: /<controller>/
         public IActionResult Shop()
         {
@@ -49,9 +49,13 @@ namespace Eksamen.Controllers
         }
         public IActionResult ShoppingCart()
         {
-                return View();
-            }
-
+            var product = new Product();
+            product.Name = "Hjelm";
+            var cart = new List<Product>();
+            cart.Add(product);
+            return View();
         }
+
     }
+}
 
