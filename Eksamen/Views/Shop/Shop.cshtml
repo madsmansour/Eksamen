@@ -14,43 +14,57 @@
     span {
         font-weight: bold;
     }
-
 </style>
 
 
 
-    <div class="container">
-        <h1>@ViewData["Title"]</h1>
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
 
-        <p>Overblik over produkter</p>
-        <div class="row" id="products">
-            @foreach (var product in Model)
+    <p>Overblik over produkter</p>
+    <div class="row" id="products">
+        @foreach (var product in Model)
             {
-            <div class="col-md-4 mb-4">
-                <div>
-                    <img src="@product.Image" alt="Productpicture" />
-                </div>
-                <div>
-                    <span>
-                        @product.Name
-                    </span>
-                </div>
-                <div>
-                    <span>
-                        Pris: @product.Price kr.
-                    </span>
-                </div>
-                <div>
-                    <span>
-                        Kategori: @product.Category
-                    </span>
-                </div>
-                <div class="text-center">
-                    <a href="/Shop/Shop/@product.Id"><button id="addToBasket" class="btn btn-sm btn-primary" onclick="alert('Varen er tilføjet til kurven')"> Tilføj til kurv </button></a>
-                </div>
+        <div class="col-md-4 mb-4">
+            <div>
+                <img src="@product.Image" alt="Productpicture" />
             </div>
-            }
+            <div>
+                <span>
+                    @product.Name
+                </span>
+            </div>
+            <div>
+                <span>
+                    Pris: @product.Price kr.
+                </span>
+            </div>
+            <div>
+                <span>
+                    Kategori: @product.Category
+                </span>
+            </div>
+            <div class="text-center">
+                <button id="@product.Id" class="btn btn-sm btn-primary" onclick="addProduct(@product.Id, 1)"> Tilføj til kurv </button>
+            </div>
         </div>
-
+            }
     </div>
 
+</div>
+
+<script>
+    function addProduct(id, antal) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("cart").innerHTML += "\n<br>" + this.responseText;
+                alert(this.responseText);
+            }
+        };
+        xhttp.open("POST", "/addProduct", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var request = "productId=" + id + "&antal=" + antal; // =
+        xhttp.send(request);
+    }
+</script>
