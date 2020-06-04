@@ -7,6 +7,7 @@ using Eksamen.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,13 +17,18 @@ namespace Eksamen.Controllers
     public class ShopController : Microsoft.AspNetCore.Mvc.Controller
     {
         private WebshopContext db = new WebshopContext(new DbContextOptions<WebshopContext>());
+        private readonly IConfiguration _configuration;
 
+        public ShopController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         // GET: /<controller>/
         public IActionResult Shop()
         {
-            String connectionString = "Server=DESKTOP-IOQO0BN\\MADS;Database=Webshop;Trusted_Connection=True;MultipleActiveResultSets=True";
-            String sql = " SELECT Products.Name, min(Images.Path) as 'image', Products.Category, Products.Price, Products.Description, Products.Id FROM Products, ProductImages, Images where ProductImages.ImageId = Images.Id and ProductImages.ProductId = Products.Id group by Products.Name, Products.Category, Products.Price, Products.Description, Products.Id"; //her bruger jeg join query til at indlæse det første billede og data";
+            string connectionString = _configuration.GetConnectionString("Webshop");
+            string sql = " SELECT Products.Name, min(Images.Path) as 'image', Products.Category, Products.Price, Products.Description, Products.Id FROM Products, ProductImages, Images where ProductImages.ImageId = Images.Id and ProductImages.ProductId = Products.Id group by Products.Name, Products.Category, Products.Price, Products.Description, Products.Id"; //her bruger jeg join query til at indlæse det første billede og data";
             var model = new List<Product>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))

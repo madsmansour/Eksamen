@@ -46,7 +46,7 @@
                     </span>
                 </div>
                 <div class="text-center">
-                    <a href="/Shop/Shop/@product.Id"><button id="addToBasket" class="btn btn-sm btn-primary" onclick="alert('Varen er tilføjet til kurven')"> Tilføj til kurv </button></a>
+                   <button id="@product.Id" class="btn btn-sm btn-primary" onclick="addProduct(@product.Id, 1)"> Tilføj til kurv </button>
                 </div>
             </div>
             }
@@ -54,3 +54,18 @@
 
     </div>
 
+    <script>
+        function addProduct(id, antal) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //document.getElementById("cart").innerHTML += "\n<br>" + this.responseText;
+                    alert(this.responseText);
+                }
+            };
+            xhttp.open("POST", "/addProduct", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            var request = "productId=" + id + "&antal=" + antal; // =
+            xhttp.send(request);
+        }
+    </script>
