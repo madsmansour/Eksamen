@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eksamen.Controllers
 {
-    public class addProductController : Controller
+    public class AddProductController : Controller
     {
         public string Index(int productId, int antal)
         {
