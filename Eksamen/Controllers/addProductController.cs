@@ -14,6 +14,7 @@ namespace Eksamen.Controllers
             // Gemme i databasen
             string sesionID = HttpContext.Session.Id;
             return antal + " stykker af varenummer " + productId + " er tilføjet. Dit session ID er " + sesionID ;
+
         }
     }
 }
