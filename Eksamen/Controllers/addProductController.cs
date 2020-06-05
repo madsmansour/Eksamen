@@ -12,8 +12,9 @@ namespace Eksamen.Controllers
         public string Index(int productId, int antal)
         {
             // Gemme i databasen
-            // string sesionID = HttpContext.Session.Id;
-            return antal + " stykker af varenummer " + productId + " er tilføjet."; // Dit session ID er " + sesionID;
+            string sesionID = HttpContext.Session.Id;
+            return antal + " stykker af varenummer " + productId + " er tilføjet. Dit session ID er " + sesionID ;
+
         }
     }
 }
