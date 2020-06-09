@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eksamen.Migrations
 {
     [DbContext(typeof(WebshopContext))]
-    [Migration("20200526082108_jpg added")]
-    partial class jpgadded
+    [Migration("20200609083336_migration")]
+    partial class migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

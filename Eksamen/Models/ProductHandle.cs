@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Text;
 
 namespace Eksamen.Models
 {
@@ -22,22 +23,39 @@ namespace Eksamen.Models
             SqlCommand cmd = new SqlCommand("AddNewProduct", con);
             cmd.CommandType = CommandType.StoredProcedure;
         
-            cmd.Parameters.AddWithValue("@Id", product.Id);
+            //cmd.Parameters.AddWithValue("@Id", product.Id);
             cmd.Parameters.AddWithValue("@Name", product.Name);
             cmd.Parameters.AddWithValue("@Price", product.Price);
             cmd.Parameters.AddWithValue("@Category", product.Category);
             cmd.Parameters.AddWithValue("@Description", product.Description);
             cmd.Parameters.AddWithValue("@ProductImageId", product.ProductImageId);
             cmd.Parameters.AddWithValue("@Image", product.Image);
+            StringBuilder errorMessages = new StringBuilder();
+            try
+            {
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+                if (i >= 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                        "Source: " + ex.Errors[i].Source + "\n" +
+                        "Procedure: " + ex.Errors[i].Procedure + "\n");
 
-        con.Open();
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
+                }
+                Console.WriteLine(errorMessages.ToString());
 
-            if (i >= 1)
-                return true;
-            else
-                return false;
+            }
+            return true;
         }
 
         // ********** VIEW PRODUCT DETAILS ********************

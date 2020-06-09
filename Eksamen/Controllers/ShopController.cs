@@ -28,7 +28,9 @@ namespace Eksamen.Controllers
         public IActionResult Shop()
         {
             string connectionString = _configuration.GetConnectionString("Webshop");
-            string sql = " SELECT Products.Name, min(Images.Path) as 'image', Products.Category, Products.Price, Products.Description, Products.Id FROM Products, ProductImages, Images where ProductImages.ImageId = Images.Id and ProductImages.ProductId = Products.Id group by Products.Name, Products.Category, Products.Price, Products.Description, Products.Id"; //her bruger jeg join query til at indlæse det første billede og data";
+            string sql = " SELECT Products.Name, min(Images.Path) as 'image', Products.Category, Products.Price, Products.Description, Products.Id " +
+                "FROM Products, ProductImages, Images where ProductImages.ImageId = Images.Id and ProductImages.ProductId = Products.Id " +
+                "GROUP BY Products.Name, Products.Category, Products.Price, Products.Description, Products.Id"; //her bruger jeg join query til at indlæse det første billede og data";
             var model = new List<Product>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))

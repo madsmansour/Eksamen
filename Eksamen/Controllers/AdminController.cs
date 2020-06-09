@@ -15,6 +15,10 @@ namespace Eksamen.Controllers
         {
             ProductHandle dbhandle = new ProductHandle();
             ModelState.Clear();
+            if (TempData["shortMessage"] != null) {
+            ViewBag.AlertMsg = TempData["shortMessage"].ToString();
+            }
+            
             return View(dbhandle.GetProducts());
         }
 
@@ -81,9 +85,10 @@ namespace Eksamen.Controllers
                 ProductHandle sdb = new ProductHandle();
                 if (sdb.DeleteProduct(id))
                 {
-                    ViewBag.AlertMsg = "Product Deleted Successfully";
+                    TempData["shortMessage"] = "The product has been deleted!";
                 }
-                return RedirectToAction("Index");
+                
+                return RedirectToAction("Select");
             }
             catch
             {

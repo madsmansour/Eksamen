@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eksamen.Migrations
 {
     [DbContext(typeof(WebshopContext))]
-    [Migration("20200522092617_All products added")]
-    partial class Allproductsadded
+    [Migration("20200609083716_111")]
+    partial class _111
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,17 +83,17 @@ namespace Eksamen.Migrations
                         new
                         {
                             Id = 10,
-                            Path = "/images/products/boots/MC-Støvler Course Aero, Sort 1"
+                            Path = "/images/products/boots/MC-Støvler Course Aero, Sort 1.jpg"
                         },
                         new
                         {
                             Id = 11,
-                            Path = "/images/products/boots/MC-Støvler Course Aero, Sort 2"
+                            Path = "/images/products/boots/MC-Støvler Course Aero, Sort 2.jpg"
                         },
                         new
                         {
                             Id = 12,
-                            Path = "/images/products/boots/MC-Støvler Course Aero, Sort 3"
+                            Path = "/images/products/boots/MC-Støvler Course Aero, Sort 3.jpg"
                         },
                         new
                         {
@@ -113,17 +113,17 @@ namespace Eksamen.Migrations
                         new
                         {
                             Id = 16,
-                            Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 1"
+                            Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 1.jpg"
                         },
                         new
                         {
                             Id = 17,
-                            Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 2"
+                            Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 2.jpg"
                         },
                         new
                         {
                             Id = 18,
-                            Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 3"
+                            Path = "/images/products/gloves/MC-Handsker Course Wasteland, Sort 3.jpg"
                         },
                         new
                         {
@@ -168,6 +168,9 @@ namespace Eksamen.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
