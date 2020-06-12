@@ -248,6 +248,13 @@ namespace Eksamen.Data
                 Id = 24,
                 Path = "/images/products/suits/Læderdragt IXS Sport RS-1000 3.jpg"
 
+                },
+
+                new Image()
+                {
+                    Id = 25,
+                    Path = "/images/products/test/MC-Rygsæk XLMOTO Slipstream Vandresistent.jpg"
+
                 }
                 );
             #endregion
@@ -419,7 +426,12 @@ namespace Eksamen.Data
                     Id = 24,
                     ProductId = 8,
                     ImageId = 24
-
+                },
+                new ProductImage()
+                {
+                    Id = 1016,
+                    ProductId = 1016,
+                    ImageId = 25
                 }
 
             );

@@ -2,7 +2,7 @@
 
 namespace Eksamen.Migrations
 {
-    public partial class migration : Migration
+    public partial class res : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,6 +57,7 @@ namespace Eksamen.Migrations
                 values: new object[,]
                 {
                     { 1, "/images/products/helmets/hjelm1.jpg" },
+                    { 25, "/images/products/test/MC-Rygsæk XLMOTO Slipstream Vandresistent.jpg" },
                     { 24, "/images/products/suits/Læderdragt IXS Sport RS-1000 3.jpg" },
                     { 23, "/images/products/suits/Læderdragt IXS Sport RS-1000 2.jpg" },
                     { 22, "/images/products/suits/Læderdragt IXS Sport RS-1000 1.jpg" },
@@ -67,19 +68,19 @@ namespace Eksamen.Migrations
                     { 16, "/images/products/gloves/MC-Handsker Course Wasteland, Sort 1.jpg" },
                     { 15, "/images/products/gloves/Handsker Course Alpha, Hvid 3.jpg" },
                     { 14, "/images/products/gloves/Handsker Course Alpha, Hvid 2.jpg" },
-                    { 13, "/images/products/gloves/Handsker Course Alpha, Hvid 1.jpg" },
                     { 20, "/images/products/suits/Læderdragt 2-delt IXS Camaro 2.jpg" },
-                    { 11, "/images/products/boots/MC-Støvler Course Aero, Sort 2.jpg" },
                     { 12, "/images/products/boots/MC-Støvler Course Aero, Sort 3.jpg" },
+                    { 13, "/images/products/gloves/Handsker Course Alpha, Hvid 1.jpg" },
                     { 2, "/images/products/helmets/hjelm2.jpg" },
                     { 3, "/images/products/helmets/hjelm3.jpg" },
-                    { 5, "/images/products/helmets/AGV X3000 2.jpg" },
                     { 4, "/images/products/helmets/AGV X3000 1.jpg" },
+                    { 6, "/images/products/helmets/AGV X3000 2.jpg" },
+                    { 5, "/images/products/helmets/AGV X3000 2.jpg" },
                     { 7, "/images/products/boots/MC-Sko XPD X-Zero R, Hvid 1.jpg" },
                     { 8, "/images/products/boots/MC-Sko XPD X-Zero R, Hvid 2.jpg" },
                     { 9, "/images/products/boots/MC-Sko XPD X-Zero R, Hvid 3.jpg" },
                     { 10, "/images/products/boots/MC-Støvler Course Aero, Sort 1.jpg" },
-                    { 6, "/images/products/helmets/AGV X3000 2.jpg" }
+                    { 11, "/images/products/boots/MC-Støvler Course Aero, Sort 2.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -87,30 +88,31 @@ namespace Eksamen.Migrations
                 columns: new[] { "Id", "ImageId", "ProductId" },
                 values: new object[,]
                 {
-                    { 10, 10, 4 },
-                    { 14, 14, 5 },
-                    { 11, 11, 4 },
+                    { 15, 15, 5 },
                     { 12, 12, 4 },
                     { 13, 13, 5 },
-                    { 15, 15, 5 },
-                    { 21, 21, 7 },
-                    { 17, 17, 6 },
+                    { 14, 14, 5 },
+                    { 11, 11, 4 },
+                    { 16, 16, 6 },
+                    { 22, 22, 8 },
                     { 18, 18, 6 },
                     { 19, 19, 7 },
                     { 20, 20, 7 },
-                    { 22, 22, 8 },
+                    { 21, 21, 7 },
+                    { 23, 23, 8 },
+                    { 10, 10, 4 },
+                    { 17, 17, 6 },
                     { 9, 9, 3 },
-                    { 16, 16, 6 },
-                    { 8, 8, 3 },
-                    { 24, 24, 8 },
+                    { 1016, 25, 1016 },
+                    { 7, 7, 3 },
                     { 6, 6, 2 },
                     { 5, 5, 2 },
                     { 4, 4, 2 },
                     { 3, 3, 1 },
                     { 2, 2, 1 },
                     { 1, 1, 1 },
-                    { 23, 23, 8 },
-                    { 7, 7, 3 }
+                    { 8, 8, 3 },
+                    { 24, 24, 8 }
                 });
 
             migrationBuilder.InsertData(
@@ -118,13 +120,13 @@ namespace Eksamen.Migrations
                 columns: new[] { "Id", "Category", "Description", "Image", "Name", "Price", "ProductImageId" },
                 values: new object[,]
                 {
-                    { 8, "Suits", "IXS RS-1000 er en læderdragt lavet af kængurulæder, for dig, der kræver den højest mulige sikkerhed og komfort!", null, "Læderdragt IXS Sport RS-1000", 11199m, 8 },
+                    { 1, "Helmet", "En god hjelm til billige penge", null, "HJC C70", 899m, 1 },
+                    { 2, "Helmet", "AGV X3000 lader dig drømme tilbage til gamle dage, da Giacomo Agostini tordnede mod sine 15 verdensmesterskabstitler!", null, "AGV X3000", 4679m, 2 },
+                    { 3, "Boots", "Den ultimative sko til racekørere på hurtige og sjove ture.", null, "MC-Sko XPD X-Zero R, Hvid", 699m, 3 },
                     { 7, "Suits", "Stilet, robust og slidstærkt lædertøj med utrolig god ventilation. IXS har lykkes rigtig godt når de fremstillede Camaro-lædertøjet!", null, "Læderdragt 2-delt IXS Camaro 1", 3149m, 7 },
                     { 6, "Gloves", "God streethandske med det helt rigtige retro urbanlook.", null, "MC-Handsker Course Wasteland, Sort", 139m, 6 },
+                    { 8, "Suits", "IXS RS-1000 er en læderdragt lavet af kængurulæder, for dig, der kræver den højest mulige sikkerhed og komfort!", null, "Læderdragt IXS Sport RS-1000", 11199m, 8 },
                     { 5, "Gloves", "Fremstillet af blødt og smidigt læder, der giver handsken en stor fleksibilitet og slidstyrke", null, "Handsker Course Alpha, Hvid", 339m, 5 },
-                    { 3, "Boots", "Den ultimative sko til racekørere på hurtige og sjove ture.", null, "MC-Sko XPD X-Zero R, Hvid", 699m, 3 },
-                    { 2, "Helmet", "AGV X3000 lader dig drømme tilbage til gamle dage, da Giacomo Agostini tordnede mod sine 15 verdensmesterskabstitler!", null, "AGV X3000", 4679m, 2 },
-                    { 1, "Helmet", "En god hjelm til billige penge", null, "HJC C70", 899m, 1 },
                     { 4, "Boots", "Course Aero er sportsstøvler, der tilbyder stil, komfort og høj sikkerhed!", null, "MC-Støvler Course Aero, Sort", 1149m, 4 }
                 });
         }

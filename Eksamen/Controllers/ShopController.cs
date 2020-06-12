@@ -30,7 +30,7 @@ namespace Eksamen.Controllers
             string connectionString = _configuration.GetConnectionString("Webshop");
             string sql = " SELECT Products.Name, min(Images.Path) as 'image', Products.Category, Products.Price, Products.Description, Products.Id " +
                 "FROM Products, ProductImages, Images where ProductImages.ImageId = Images.Id and ProductImages.ProductId = Products.Id " +
-                "GROUP BY Products.Name, Products.Category, Products.Price, Products.Description, Products.Id"; //her bruger jeg join query til at indlæse det første billede og data";
+                "GROUP BY Products.Name, Products.Category, Products.Price, Products.Description, Products.Id"; //her bruger jeg join query (Fra 3 tables) til at indlæse det første billede og data";
             var model = new List<Product>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))

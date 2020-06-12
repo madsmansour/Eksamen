@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eksamen.Migrations
 {
     [DbContext(typeof(WebshopContext))]
-    [Migration("20200609083336_migration")]
-    partial class migration
+    [Migration("20200612131259_res")]
+    partial class res
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -154,6 +154,11 @@ namespace Eksamen.Migrations
                         {
                             Id = 24,
                             Path = "/images/products/suits/Læderdragt IXS Sport RS-1000 3.jpg"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Path = "/images/products/test/MC-Rygsæk XLMOTO Slipstream Vandresistent.jpg"
                         });
                 });
 
@@ -422,6 +427,12 @@ namespace Eksamen.Migrations
                             Id = 24,
                             ImageId = 24,
                             ProductId = 8
+                        },
+                        new
+                        {
+                            Id = 1016,
+                            ImageId = 25,
+                            ProductId = 1016
                         });
                 });
 #pragma warning restore 612, 618
