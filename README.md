@@ -6,7 +6,7 @@ For at starte:
 
 1. __Åben projekt i Microsoft Visual Studio__
 
-1. __Ændre connection string i ShopController.cs samt appsettings.json så den passer til din database__
+1. __Ændre connection string i ShopController.cs + appsettings.json + Producthandle.cs så den passer til din database__
 
 1. __Kør kommandoen 'EntityFrameworkCore\Add-Migration' i PM for at lægge data i databasen.__
 
