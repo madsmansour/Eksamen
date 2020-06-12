@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Eksamen.Models;
-
+using System.Data.SqlTypes;
+using Microsoft.Data.SqlClient;
+using System;
+using System.Text;
 
 namespace Eksamen.Controllers
 {
@@ -16,9 +19,9 @@ namespace Eksamen.Controllers
             ProductHandle dbhandle = new ProductHandle();
             ModelState.Clear();
             if (TempData["shortMessage"] != null) {
-            ViewBag.AlertMsg = TempData["shortMessage"].ToString();
+                ViewBag.AlertMsg = TempData["shortMessage"].ToString();
             }
-            
+
             return View(dbhandle.GetProducts());
         }
 
@@ -33,23 +36,31 @@ namespace Eksamen.Controllers
         [HttpPost]
         public ActionResult Create(Product product)
         {
-            try
+            StringBuilder errorMessages = new StringBuilder();
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                try {
+                ProductHandle sdb = new ProductHandle();
+                if (sdb.AddProduct(product))
                 {
-                    ProductHandle sdb = new ProductHandle();
-                    if (sdb.AddProduct(product))
-                    {
-                        ViewBag.Message = "Product Details Added Successfully";
-                        ModelState.Clear();
-                    }
+                    ViewBag.Message = "Product Details Added Successfully";
+                    ModelState.Clear();
                 }
-                return View();
+                }
+                catch (SqlException ex)
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    Console.WriteLine(errorMessages.ToString());
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // 3. ************* EDIT PRODUCT DETAILS ******************
